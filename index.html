@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Rifatul Haque — Software Quality Assurance Engineer</title>
+    <meta name="description" content="Portfolio of Md Rifatul Haque — SQA Engineer & AI Graduate Student with expertise in software testing, full-stack development, and quality assurance.">
+    <meta name="author" content="Md Rifatul Haque">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>Rifat<span class="logo-bracket"> /&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-effects">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            <div class="grid-overlay"></div>
+            <div class="particles" id="particles"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-greeting animate-on-scroll">Hello, I'm</p>
+            <h1 class="hero-name animate-on-scroll">Md Rifatul Haque</h1>
+            <div class="hero-title-wrapper animate-on-scroll">
+                <span class="hero-title" id="typedTitle"></span>
+                <span class="cursor-blink">|</span>
+            </div>
+            <p class="hero-tagline animate-on-scroll">Seeking to apply academic knowledge, work experience, and macro &amp; micro skills on innovative and target-oriented projects.</p>
+            <div class="hero-cta animate-on-scroll">
+                <a href="#projects" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+            <div class="hero-socials animate-on-scroll">
+                <a href="https://github.com/Rifat78666" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/md-rifatul-haque-4753b9155/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="mailto:rifatulhaque200@gmail.com" class="social-link" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+                <a href="tel:+393508805423" class="social-link" aria-label="Phone">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"><div class="mouse-wheel"></div></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ ABOUT ═══════════════════ -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">
+                <span class="section-number">01.</span> About Me
+            </h2>
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <p>
+                        I'm <strong>Md Rifatul Haque</strong>, a Software Quality Assurance Engineer
+                        currently pursuing an <strong>MSc in Artificial Intelligence for Science &amp; Technology</strong>
+                        at the University of Milan-Bicocca, Italy. Originally from Cumilla, Bangladesh,
+                        I bring over <strong>2+ years of professional experience</strong> in SQA, system
+                        engineering, and software documentation.
+                    </p>
+                    <p>
+                        My expertise spans manual &amp; automated testing, API testing with Postman,
+                        full-stack development with React and FastAPI, and network systems engineering.
+                        I'm passionate about building high-quality software and leveraging AI to solve
+                        real-world problems.
+                    </p>
+                </div>
+                <div class="about-stats animate-on-scroll">
+                    <div class="stat-card glass-card">
+                        <span class="stat-number" data-count="2">0</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">Companies</span>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <span class="stat-number" data-count="12">0</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ SKILLS ═══════════════════ -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">
+                <span class="section-number">02.</span> Skills & Technologies
+            </h2>
+
+            <!-- QA & Testing -->
+            <h3 class="skills-category animate-on-scroll">QA & Testing</h3>
+            <div class="skills-grid">
+                <div class="skill-card glass-card animate-on-scroll" style="--delay: 0s">
+                    <span class="skill-icon">&#x1F50D;</span>
+                    <h3 class="skill-name">Manual Testing</h3>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="95"></div></div>
+                    <span class="skill-level">95%</span>
+                </div>
+                <div class="skill-card glass-card animate-on-scroll" style="--delay: 0.08s">
+                    <span class="skill-icon">&#x1F4E8;</span>
+                    <h3 class="skill-name">API Testing (Postman)</h3>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="90"></div></div>
+                    <span class="skill-level">90%</span>
+                </div>
+                <div class="skill-card glass-card animate-on-scroll" style="--delay: 0.16s">
+                    <span class="skill-icon">&#x1F41E;</span>
+                    <h3 class="skill-name">Bug Tracking (JIRA)</h3>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="90"></div></div>
+                    <span class="skill-level">90%</span>
+                </div>
+                <div class="skill-card glass-card animate-on-scroll" style="--delay: 0.24s">
+                    <span class="skill-icon">&#x1F4F1;</span>
+                    <h3 class="skill-name">Mobile Testing</h3>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="85"></div></div>
+                    <span class="skill-level">85%</span>
+                </div>
+            </div>
+
+            <!-- Development -->
+            <h3 class="skills-category animate-on-scroll">Development</h3>
+            <div class="skills-grid">
+                <div class="skill-card glass-card animate-on-scroll" style="--delay: 0s">
+                    <span class="skill-icon">&#x1F40D;</span>
+                    <h3 class="skill-name">Python / FastAPI</h3>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="85"></div></div>
+                    <span class="skill-level">85%</span>
+                </div>
+                <div class="skill-card glass-card animate-on-scroll" style="--delay: 0.08s">
+                    <span class="skill-icon">&#x269B;&#xFE0F;</span>
+                    <h3 class="skill-name">React.js / Vite</h3>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="80"></div></div>
+                    <span class="skill-level">80%</span>
+                </div>
+                <div class="skill-card glass-card animate-on-scroll" style="--delay: 0.16s">
+                    <span class="skill-icon">&#x26A1;</span>
+                    <h3 class="skill-name">JavaScript</h3>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="80"></div></div>
+                    <span class="skill-level">80%</span>
+                </div>
+                <div class="skill-card glass-card animate-on-scroll" style="--delay: 0.24s">
+                    <span class="skill-icon">&#x1F3A8;</span>
+                    <h3 class="skill-name">HTML / CSS</h3>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="85"></div></div>
+                    <span class="skill-level">85%</span>
+                </div>
+            </div>
+
+            <!-- Tools & Infrastructure -->
+            <h3 class="skills-category animate-on-scroll">Tools & Infrastructure</h3>
+            <div class="skills-grid">
+                <div class="skill-card glass-card animate-on-scroll" style="--delay: 0s">
+                    <span class="skill-icon">&#x1F433;</span>
+                    <h3 class="skill-name">Docker</h3>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="75"></div></div>
+                    <span class="skill-level">75%</span>
+                </div>
+                <div class="skill-card glass-card animate-on-scroll" style="--delay: 0.08s">
+                    <span class="skill-icon">&#x1F5C4;&#xFE0F;</span>
+                    <h3 class="skill-name">PostgreSQL / Supabase</h3>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="80"></div></div>
+                    <span class="skill-level">80%</span>
+                </div>
+                <div class="skill-card glass-card animate-on-scroll" style="--delay: 0.16s">
+                    <span class="skill-icon">&#x1F500;</span>
+                    <h3 class="skill-name">Git & GitHub</h3>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="85"></div></div>
+                    <span class="skill-level">85%</span>
+                </div>
+                <div class="skill-card glass-card animate-on-scroll" style="--delay: 0.24s">
+                    <span class="skill-icon">&#x1F680;</span>
+                    <h3 class="skill-name">Vercel / Render / CI-CD</h3>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="80"></div></div>
+                    <span class="skill-level">80%</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">
+                <span class="section-number">03.</span> Featured Projects
+            </h2>
+            <div class="projects-grid">
+
+                <!-- Project 1: Avanza Pathfinders -->
+                <div class="project-card glass-card animate-on-scroll" style="--delay: 0s">
+                    <div class="project-header">
+                        <svg class="project-folder-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                        <div class="project-links">
+                            <a href="https://github.com/Rifat78666" target="_blank" rel="noopener" aria-label="Source Code">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Avanza Pathfinders</h3>
+                    <p class="project-description">
+                        A production-grade career navigation platform for global talent in Italy.
+                        Decoupled monorepo with React/Vite frontend, Python FastAPI backend,
+                        Supabase PostgreSQL database, Stytch passwordless auth, and 7-language
+                        i18n support. Deployed on Vercel + Render with Docker containerization.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">AI</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Webtech -->
+                <div class="project-card glass-card animate-on-scroll" style="--delay: 0.15s">
+                    <div class="project-header">
+                        <svg class="project-folder-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                        <div class="project-links">
+                            <a href="https://github.com/Rifat78666/Webtech" target="_blank" rel="noopener" aria-label="Source Code">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Webtech</h3>
+                    <p class="project-description">
+                        A web technology project built with PHP, exploring server-side
+                        development, dynamic page rendering, and backend logic fundamentals.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Web Dev</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: SQA -->
+                <div class="project-card glass-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="project-header">
+                        <svg class="project-folder-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                        <div class="project-links">
+                            <a href="https://github.com/Rifat78666/SQA" target="_blank" rel="noopener" aria-label="Source Code">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">SQA Testing Suite</h3>
+                    <p class="project-description">
+                        Software Quality Assurance project featuring test plans, test cases,
+                        regression testing, smoke testing, and systematic quality control
+                        processes based on real-world professional experience.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Testing</span>
+                        <span class="tag">QA</span>
+                        <span class="tag">Postman</span>
+                        <span class="tag">Documentation</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: Explore with Postman -->
+                <div class="project-card glass-card animate-on-scroll" style="--delay: 0.45s">
+                    <div class="project-header">
+                        <svg class="project-folder-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                        <div class="project-links">
+                            <a href="https://github.com/Rifat78666/explore-with-postman" target="_blank" rel="noopener" aria-label="Source Code">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Explore with Postman</h3>
+                    <p class="project-description">
+                        API testing and exploration using Postman, covering REST API workflows,
+                        request collections, environment configs, and automated testing pipelines.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Postman</span>
+                        <span class="tag">API Testing</span>
+                        <span class="tag">REST</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ EXPERIENCE ═══════════════════ -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">
+                <span class="section-number">04.</span> Work Experience
+            </h2>
+            <div class="timeline">
+
+                <!-- Banglalink -->
+                <div class="timeline-item animate-on-scroll" style="--delay: 0s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-period">Jan 2023 &mdash; Apr 2024</span>
+                        <h3 class="timeline-role">Software Quality Assurance Engineer</h3>
+                        <p class="timeline-company">Banglalink Digital Communication Limited &mdash; Dhaka, Bangladesh</p>
+                        <ul class="timeline-highlights">
+                            <li>Created and executed test plans and test cases using Microsoft Word and Excel.</li>
+                            <li>Identified, isolated, and tracked bugs testing mobile and web applications (Android &amp; iOS).</li>
+                            <li>Performed manual, functional, performance, and system tests; API testing with Postman, Regression, Smoke, Sanity testing and UAT.</li>
+                            <li>Created bug reports summary of pre-released software and manually performed CSS bug testing and fixing instantly.</li>
+                            <li>Wrote immersive business requirements for MYBL digital platform.</li>
+                            <li>Bug reporting and tracking on JIRA &amp; Confluence.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Digi Jadoo -->
+                <div class="timeline-item animate-on-scroll" style="--delay: 0.15s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-period">Oct 2022 &mdash; Jan 2023</span>
+                        <h3 class="timeline-role">Assistant System Engineer</h3>
+                        <p class="timeline-company">Digi Jadoo Broadband Limited &mdash; Dhaka, Bangladesh</p>
+                        <ul class="timeline-highlights">
+                            <li>Worked on Digital Cable TV, OTT Media Systems, and ISP workflows at the logical and physical level.</li>
+                            <li>Maintained broadcast and satellite transmission and control of all main parameters of channels.</li>
+                            <li>Monitored Bioscope (Grameenphone), Binge (Robi), and MCP/CSCP projects of Bangladesh Satellite Company Limited (BSCL).</li>
+                            <li>Monitored the total system through various tools (MRTG, CACTI, Solar Winds).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Olivine -->
+                <div class="timeline-item animate-on-scroll" style="--delay: 0.3s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-period">Oct 2021 &mdash; Feb 2022</span>
+                        <h3 class="timeline-role">Software Documentation &amp; SQA</h3>
+                        <p class="timeline-company">Olivine Limited &mdash; Dhaka, Bangladesh</p>
+                        <ul class="timeline-highlights">
+                            <li>Designed test plans, scenarios, scripts, and procedures.</li>
+                            <li>Monitored bug resolution efforts and tracked successes.</li>
+                            <li>Reviewed software documentation to ensure technical accuracy, compliance, and completeness.</li>
+                            <li>Documented software defects using a bug tracking system and reported defects to developers.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ EDUCATION ═══════════════════ -->
+    <section class="section education" id="education">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">
+                <span class="section-number">05.</span> Education & Training
+            </h2>
+            <div class="education-grid">
+
+                <div class="edu-card glass-card animate-on-scroll" style="--delay: 0s">
+                    <div class="edu-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg>
+                    </div>
+                    <span class="edu-period">Sep 2025 &mdash; Present</span>
+                    <h3 class="edu-degree">MSc in Artificial Intelligence for Science &amp; Technology</h3>
+                    <p class="edu-school">University of Milan-Bicocca &mdash; Milano, Italy</p>
+                </div>
+
+                <div class="edu-card glass-card animate-on-scroll" style="--delay: 0.15s">
+                    <div class="edu-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg>
+                    </div>
+                    <span class="edu-period">Apr 2024 &mdash; Mar 2025</span>
+                    <h3 class="edu-degree">Postgraduate Diploma in Logistics &amp; Supply Chain Management</h3>
+                    <p class="edu-school">Malta International College &mdash; Birkirkara, Malta</p>
+                    <span class="edu-badge">MQF-L7 &bull; EQF Level 7</span>
+                </div>
+
+                <div class="edu-card glass-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="edu-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg>
+                    </div>
+                    <span class="edu-period">May 2017 &mdash; Oct 2021</span>
+                    <h3 class="edu-degree">Bachelor of Science in Computer Science &amp; Engineering</h3>
+                    <p class="edu-school">American International University-Bangladesh (AIUB) &mdash; Dhaka</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ CONTACT ═══════════════════ -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">
+                <span class="section-number">06.</span> Get In Touch
+            </h2>
+            <div class="contact-content animate-on-scroll">
+                <p class="contact-text">
+                    I'm always open to discussing new projects, creative ideas,
+                    or opportunities to be part of your vision. Feel free to reach
+                    out &mdash; let's build something great together!
+                </p>
+                <div class="contact-info">
+                    <a href="mailto:rifatulhaque200@gmail.com" class="contact-item glass-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>rifatulhaque200@gmail.com</span>
+                    </a>
+                    <a href="tel:+393508805423" class="contact-item glass-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>+39 350 880 5423</span>
+                    </a>
+                    <a href="https://wa.me/35699245936" target="_blank" rel="noopener" class="contact-item glass-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                        <span>WhatsApp: +356 9924 5936</span>
+                    </a>
+                </div>
+                <a href="mailto:rifatulhaque200@gmail.com" class="btn btn-primary btn-lg" style="margin-top: 32px;">
+                    <span>Say Hello</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                </a>
+                <div class="contact-socials">
+                    <a href="https://github.com/Rifat78666" target="_blank" rel="noopener" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/md-rifatul-haque-4753b9155/" target="_blank" rel="noopener" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ FOOTER ═══════════════════ -->
+    <footer class="footer">
+        <p>Designed & Built by <span class="footer-highlight">Md Rifatul Haque</span> &mdash; Milano, Italy</p>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- Mobile nav overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
