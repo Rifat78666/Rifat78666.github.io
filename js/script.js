@@ -150,9 +150,21 @@
         skillObserver.observe(bar);
     });
 
-    // ── Language bar fills on scroll ───────────────────────
-    document.querySelectorAll('.language-bar-fill').forEach(bar => {
-        skillObserver.observe(bar);
+    // ── Language ring fills on scroll ───────────────────────
+    const ringObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    ringObserver.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.5 }
+    );
+
+    document.querySelectorAll('.lang-ring-fill').forEach(ring => {
+        ringObserver.observe(ring);
     });
 
     // ── Count-up animation for stat numbers ────────────────

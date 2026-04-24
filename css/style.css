@@ -926,69 +926,76 @@ ul { list-style: none; }
     border: 1px solid rgba(124, 106, 255, 0.15);
 }
 
-/* ── Language Proficiency ────────────────────────────────── */
-.subsection-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--accent-2);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 60px;
-    margin-bottom: 24px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+/* ── Language Circular Rings ──────────────────────────────── */
+.lang-rings-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
 }
 
-.language-section {
-    margin-top: 20px;
-}
-
-.language-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.language-card {
-    padding: 24px;
+.lang-ring-item {
     text-align: center;
 }
 
-.language-flag {
-    font-size: 2.4rem;
-    display: block;
-    margin-bottom: 10px;
+.lang-ring-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 18px;
 }
 
-.language-name {
-    font-size: 0.95rem;
+.lang-ring-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.lang-ring-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.06);
+    stroke-width: 8;
+}
+
+.lang-ring-fill {
+    fill: none;
+    stroke: url(#langGradient);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 326.73;
+    stroke-dashoffset: 326.73;
+    transition: stroke-dashoffset 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    filter: drop-shadow(0 0 6px rgba(124, 106, 255, 0.4));
+}
+
+.lang-ring-fill.animated {
+    stroke-dashoffset: calc(326.73 - (326.73 * var(--percent) / 100));
+}
+
+.lang-ring-percent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.lang-ring-name {
+    font-size: 1.05rem;
     font-weight: 600;
     margin-bottom: 4px;
 }
 
-.language-level {
+.lang-ring-level {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--accent-2);
-    display: block;
-    margin-bottom: 14px;
-}
-
-.language-bar {
-    width: 100%;
-    height: 5px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.language-bar-fill {
-    height: 100%;
-    width: 0;
-    background: var(--accent-gradient);
-    border-radius: 4px;
-    transition: width 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: 0 0 12px rgba(124, 106, 255, 0.3);
 }
 
 /* ── Publications ────────────────────────────────────────── */

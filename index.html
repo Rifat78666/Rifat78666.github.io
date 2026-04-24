@@ -16,6 +16,16 @@
 </head>
 <body>
 
+    <!-- SVG gradient definition for language rings -->
+    <svg style="position:absolute;width:0;height:0">
+        <defs>
+            <linearGradient id="langGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#7c6aff" />
+                <stop offset="100%" stop-color="#00d4ff" />
+            </linearGradient>
+        </defs>
+    </svg>
+
     <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -29,6 +39,7 @@
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#languages" class="nav-link">Languages</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -119,31 +130,6 @@
                     <div class="stat-card glass-card">
                         <span class="stat-number" data-count="20">0</span>
                         <span class="stat-label">Technologies</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Language Proficiency -->
-            <div class="language-section animate-on-scroll">
-                <h3 class="subsection-title">Language Proficiency</h3>
-                <div class="language-grid">
-                    <div class="language-card glass-card">
-                        <span class="language-flag">🇬🇧</span>
-                        <h4 class="language-name">English</h4>
-                        <span class="language-level">C1 &mdash; Advanced</span>
-                        <div class="language-bar"><div class="language-bar-fill" data-level="90"></div></div>
-                    </div>
-                    <div class="language-card glass-card">
-                        <span class="language-flag">🇮🇹</span>
-                        <h4 class="language-name">Italian</h4>
-                        <span class="language-level">A2 &mdash; Elementary</span>
-                        <div class="language-bar"><div class="language-bar-fill" data-level="35"></div></div>
-                    </div>
-                    <div class="language-card glass-card">
-                        <span class="language-flag">🇧🇩</span>
-                        <h4 class="language-name">Bengali</h4>
-                        <span class="language-level">Native</span>
-                        <div class="language-bar"><div class="language-bar-fill" data-level="100"></div></div>
                     </div>
                 </div>
             </div>
@@ -573,11 +559,62 @@
         </div>
     </section>
 
+    <!-- ═══════════════════ LANGUAGES ═══════════════════ -->
+    <section class="section languages" id="languages">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">
+                <span class="section-number">07.</span> Languages
+            </h2>
+            <div class="lang-rings-grid animate-on-scroll">
+
+                <!-- English -->
+                <div class="lang-ring-item">
+                    <div class="lang-ring-wrapper">
+                        <svg class="lang-ring-svg" viewBox="0 0 120 120">
+                            <circle class="lang-ring-bg" cx="60" cy="60" r="52" />
+                            <circle class="lang-ring-fill" cx="60" cy="60" r="52" data-percent="90" style="--percent: 90" />
+                        </svg>
+                        <span class="lang-ring-percent">90%</span>
+                    </div>
+                    <h3 class="lang-ring-name">English</h3>
+                    <span class="lang-ring-level">C1 &mdash; Advanced</span>
+                </div>
+
+                <!-- Italian -->
+                <div class="lang-ring-item">
+                    <div class="lang-ring-wrapper">
+                        <svg class="lang-ring-svg" viewBox="0 0 120 120">
+                            <circle class="lang-ring-bg" cx="60" cy="60" r="52" />
+                            <circle class="lang-ring-fill" cx="60" cy="60" r="52" data-percent="35" style="--percent: 35" />
+                        </svg>
+                        <span class="lang-ring-percent">35%</span>
+                    </div>
+                    <h3 class="lang-ring-name">Italian</h3>
+                    <span class="lang-ring-level">A2 &mdash; Elementary</span>
+                </div>
+
+                <!-- Bengali -->
+                <div class="lang-ring-item">
+                    <div class="lang-ring-wrapper">
+                        <svg class="lang-ring-svg" viewBox="0 0 120 120">
+                            <circle class="lang-ring-bg" cx="60" cy="60" r="52" />
+                            <circle class="lang-ring-fill" cx="60" cy="60" r="52" data-percent="100" style="--percent: 100" />
+                        </svg>
+                        <span class="lang-ring-percent">100%</span>
+                    </div>
+                    <h3 class="lang-ring-name">Bengali</h3>
+                    <span class="lang-ring-level">Native</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- ═══════════════════ CONTACT ═══════════════════ -->
     <section class="section contact" id="contact">
         <div class="container">
             <h2 class="section-title animate-on-scroll">
-                <span class="section-number">07.</span> Get In Touch
+                <span class="section-number">08.</span> Get In Touch
             </h2>
             <div class="contact-content animate-on-scroll">
                 <p class="contact-text">
