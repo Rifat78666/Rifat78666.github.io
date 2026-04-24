@@ -150,6 +150,11 @@
         skillObserver.observe(bar);
     });
 
+    // ── Language bar fills on scroll ───────────────────────
+    document.querySelectorAll('.language-bar-fill').forEach(bar => {
+        skillObserver.observe(bar);
+    });
+
     // ── Count-up animation for stat numbers ────────────────
     const countObserver = new IntersectionObserver(
         (entries) => {
