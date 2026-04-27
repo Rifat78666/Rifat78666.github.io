@@ -45,7 +45,7 @@
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let particles = [];
-        const particleCount = window.innerWidth < 768 ? 40 : 80;
+        const particleCount = window.innerWidth < 768 ? 60 : 120;
         const connectionDistance = 140;
         const mouse = { x: null, y: null, radius: 150 };
 
