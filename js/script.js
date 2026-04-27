@@ -63,32 +63,35 @@
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 1;
-                this.speedX = (Math.random() * 1 - 0.5) * 0.8;
-                this.speedY = (Math.random() * 1 - 0.5) * 0.8;
+                this.size = Math.random() * 2.5 + 1.5;
+                this.speedX = (Math.random() * 1 - 0.5) * 0.7;
+                this.speedY = (Math.random() * 1 - 0.5) * 0.7;
             }
 
             update() {
+                // Return to original speed if mouse is gone
                 this.x += this.speedX;
                 this.y += this.speedY;
 
+                // Bounce
                 if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
                 if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
 
-                // Mouse interaction
+                // Mouse interaction - Magnetic Attraction
                 if (mouse.x !== null) {
                     let dx = mouse.x - this.x;
                     let dy = mouse.y - this.y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
                     if (distance < mouse.radius) {
-                        this.x -= dx * 0.02;
-                        this.y -= dy * 0.02;
+                        const force = (mouse.radius - distance) / mouse.radius;
+                        this.x += dx * force * 0.03;
+                        this.y += dy * force * 0.03;
                     }
                 }
             }
 
             draw() {
-                ctx.fillStyle = 'rgba(15, 23, 42, 0.25)'; // Dark slate nodes
+                ctx.fillStyle = 'rgba(15, 23, 42, 0.6)'; // Stronger Black/Slate
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
@@ -110,6 +113,21 @@
                 particles[i].update();
                 particles[i].draw();
 
+                // Mouse to Particle connection
+                if (mouse.x !== null) {
+                    let dx = mouse.x - particles[i].x;
+                    let dy = mouse.y - particles[i].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius) {
+                        ctx.strokeStyle = `rgba(15, 23, 42, ${0.2 * (1 - distance / mouse.radius)})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.beginPath();
+                        ctx.moveTo(mouse.x, mouse.y);
+                        ctx.lineTo(particles[i].x, particles[i].y);
+                        ctx.stroke();
+                    }
+                }
+
                 for (let j = i; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
@@ -117,8 +135,8 @@
 
                     if (distance < connectionDistance) {
                         const opacity = 1 - (distance / connectionDistance);
-                        ctx.strokeStyle = `rgba(15, 23, 42, ${opacity * 0.1})`; // Dark slate connections
-                        ctx.lineWidth = 1;
+                        ctx.strokeStyle = `rgba(15, 23, 42, ${opacity * 0.18})`; 
+                        ctx.lineWidth = 0.8;
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
