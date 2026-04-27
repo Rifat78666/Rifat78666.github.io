@@ -97,12 +97,12 @@
 
             draw() {
                 if (this.highlighted) {
-                    ctx.shadowBlur = 12;
-                    ctx.shadowColor = 'rgba(15, 23, 42, 0.6)';
-                    ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+                    ctx.shadowBlur = 15;
+                    ctx.shadowColor = 'rgba(129, 140, 248, 0.8)';
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
                 } else {
                     ctx.shadowBlur = 0;
-                    ctx.fillStyle = 'rgba(15, 23, 42, 0.55)';
+                    ctx.fillStyle = 'rgba(129, 140, 248, 0.4)';
                 }
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -126,7 +126,7 @@
             // Draw mouse highlight area
             if (mouse.x !== null) {
                 const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, mouse.radius);
-                grad.addColorStop(0, 'rgba(99, 102, 241, 0.04)');
+                grad.addColorStop(0, 'rgba(99, 102, 241, 0.08)');
                 grad.addColorStop(1, 'rgba(99, 102, 241, 0)');
                 ctx.fillStyle = grad;
                 ctx.beginPath();
@@ -145,7 +145,7 @@
                     let distance = Math.sqrt(dx * dx + dy * dy);
                     if (distance < mouse.radius) {
                         const strength = 1 - distance / mouse.radius;
-                        ctx.strokeStyle = `rgba(15, 23, 42, ${strength * 0.35})`;
+                        ctx.strokeStyle = `rgba(129, 140, 248, ${strength * 0.4})`;
                         ctx.lineWidth = strength * 1.5;
                         ctx.beginPath();
                         ctx.moveTo(mouse.x, mouse.y);
@@ -162,7 +162,7 @@
 
                     if (distance < connectionDistance) {
                         const opacity = 1 - (distance / connectionDistance);
-                        ctx.strokeStyle = `rgba(15, 23, 42, ${opacity * 0.22})`;
+                        ctx.strokeStyle = `rgba(129, 140, 248, ${opacity * 0.25})`;
                         ctx.lineWidth = opacity * 1.2;
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);

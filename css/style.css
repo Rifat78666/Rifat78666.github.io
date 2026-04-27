@@ -10,28 +10,28 @@
 }
 
 :root {
-    /* Core palette — Premium Light */
-    --bg-primary:    #f8fafc;
-    --bg-secondary:  #ffffff;
-    --bg-card:       rgba(255, 255, 255, 0.7);
-    --bg-card-hover: rgba(255, 255, 255, 0.95);
+    /* Core palette — Premium Dark */
+    --bg-primary:    #020617;
+    --bg-secondary:  #0f172a;
+    --bg-card:       rgba(15, 23, 42, 0.6);
+    --bg-card-hover: rgba(30, 41, 59, 0.8);
 
-    /* Accent — Adjusted for light mode contrast */
-    --accent-1: #6366f1;
-    --accent-2: #0ea5e9;
-    --accent-3: #8b5cf6;
+    /* Accent — Vibrant for dark mode */
+    --accent-1: #818cf8;
+    --accent-2: #38bdf8;
+    --accent-3: #a78bfa;
     --accent-gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
     --accent-gradient-2: linear-gradient(135deg, var(--accent-3), var(--accent-1));
 
     /* Text */
-    --text-primary:   #0f172a;
-    --text-secondary: #475569;
-    --text-muted:     #94a3b8;
+    --text-primary:   #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted:     #64748b;
 
     /* Glass */
-    --glass-bg:     rgba(255, 255, 255, 0.65);
-    --glass-border: rgba(0, 0, 0, 0.05);
-    --glass-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
+    --glass-bg:     rgba(15, 23, 42, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 
     /* Misc */
     --radius: 18px;
@@ -142,10 +142,10 @@ ul { list-style: none; }
     top: 0; left: 0; right: 0;
     z-index: 1000;
     padding: 18px 0;
-    background: rgba(248, 250, 252, 0.85);
+    background: rgba(2, 6, 23, 0.8);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    border-bottom: 1px solid var(--glass-border);
     transition: var(--transition);
 }
 
@@ -185,8 +185,8 @@ ul { list-style: none; }
 .nav-link {
     padding: 9px 20px;
     font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-primary);
+    font-weight: 500;
+    color: var(--text-secondary);
     border-radius: 8px;
     transition: var(--transition);
     position: relative;
@@ -434,7 +434,7 @@ ul { list-style: none; }
     border: 1px solid var(--glass-border);
     color: var(--text-secondary);
     transition: var(--transition);
-    background: rgba(15, 23, 42, 0.03);
+    background: rgba(255, 255, 255, 0.02);
 }
 .social-link:hover {
     color: var(--accent-2);
@@ -579,7 +579,7 @@ ul { list-style: none; }
 .skill-bar {
     width: 100%;
     height: 5px;
-    background: rgba(15, 23, 42, 0.05);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 4px;
     overflow: hidden;
     margin-bottom: 10px;
