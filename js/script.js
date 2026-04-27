@@ -40,25 +40,98 @@
     // Start typing after a small delay
     setTimeout(typeEffect, 1400);
 
-    // ── Floating particles ─────────────────────────────────
-    const particleContainer = document.getElementById('particles');
-    if (particleContainer) {
-        for (let i = 0; i < 30; i++) {
-            const p = document.createElement('div');
-            p.className = 'particle';
-            p.style.left = Math.random() * 100 + '%';
-            p.style.animationDuration = (6 + Math.random() * 10) + 's';
-            p.style.animationDelay = (Math.random() * 8) + 's';
-            p.style.width = (2 + Math.random() * 2) + 'px';
-            p.style.height = p.style.width;
-            p.style.opacity = 0;
+    // ── Neural Network Background ──────────────────────────
+    const canvas = document.getElementById('neuralCanvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const particleCount = window.innerWidth < 768 ? 40 : 80;
+        const connectionDistance = 140;
+        const mouse = { x: null, y: null, radius: 150 };
 
-            // Randomize color between accent-1 and accent-2
-            const colors = ['#7c6aff', '#00d4ff', '#a855f7'];
-            p.style.background = colors[Math.floor(Math.random() * colors.length)];
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
 
-            particleContainer.appendChild(p);
+        window.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = (Math.random() * 1 - 0.5) * 0.8;
+                this.speedY = (Math.random() * 1 - 0.5) * 0.8;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+
+                // Mouse interaction
+                if (mouse.x !== null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius) {
+                        this.x -= dx * 0.02;
+                        this.y -= dy * 0.02;
+                    }
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = 'rgba(99, 102, 241, 0.4)'; // Subtle indigo
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
         }
+
+        function init() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < connectionDistance) {
+                        const opacity = 1 - (distance / connectionDistance);
+                        ctx.strokeStyle = `rgba(99, 102, 241, ${opacity * 0.15})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', init);
+        init();
+        animate();
     }
 
     // ── Navbar scroll effect ───────────────────────────────
