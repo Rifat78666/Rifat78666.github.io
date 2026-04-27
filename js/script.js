@@ -45,9 +45,9 @@
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let particles = [];
-        const particleCount = window.innerWidth < 768 ? 60 : 120;
-        const connectionDistance = 140;
-        const mouse = { x: null, y: null, radius: 150 };
+        const particleCount = window.innerWidth < 768 ? 80 : 160;
+        const connectionDistance = 160;
+        const mouse = { x: null, y: null, radius: 220 };
 
         window.addEventListener('mousemove', (e) => {
             mouse.x = e.clientX;
@@ -63,38 +63,51 @@
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2.5 + 1.5;
-                this.speedX = (Math.random() * 1 - 0.5) * 0.7;
-                this.speedY = (Math.random() * 1 - 0.5) * 0.7;
+                this.baseSize = Math.random() * 2.5 + 1.5;
+                this.size = this.baseSize;
+                this.speedX = (Math.random() - 0.5) * 0.6;
+                this.speedY = (Math.random() - 0.5) * 0.6;
+                this.highlighted = false;
             }
 
             update() {
-                // Return to original speed if mouse is gone
                 this.x += this.speedX;
                 this.y += this.speedY;
 
-                // Bounce
                 if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
                 if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
 
-                // Mouse interaction - Magnetic Attraction
+                this.highlighted = false;
+                this.size = this.baseSize;
+
+                // Mouse interaction — Magnetic Attraction + Highlight
                 if (mouse.x !== null) {
                     let dx = mouse.x - this.x;
                     let dy = mouse.y - this.y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
                     if (distance < mouse.radius) {
                         const force = (mouse.radius - distance) / mouse.radius;
-                        this.x += dx * force * 0.03;
-                        this.y += dy * force * 0.03;
+                        this.x += dx * force * 0.04;
+                        this.y += dy * force * 0.04;
+                        this.highlighted = true;
+                        this.size = this.baseSize + force * 3;
                     }
                 }
             }
 
             draw() {
-                ctx.fillStyle = 'rgba(15, 23, 42, 0.6)'; // Stronger Black/Slate
+                if (this.highlighted) {
+                    ctx.shadowBlur = 12;
+                    ctx.shadowColor = 'rgba(15, 23, 42, 0.6)';
+                    ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+                } else {
+                    ctx.shadowBlur = 0;
+                    ctx.fillStyle = 'rgba(15, 23, 42, 0.55)';
+                }
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
+                ctx.shadowBlur = 0;
             }
         }
 
@@ -109,18 +122,31 @@
 
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw mouse highlight area
+            if (mouse.x !== null) {
+                const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, mouse.radius);
+                grad.addColorStop(0, 'rgba(99, 102, 241, 0.04)');
+                grad.addColorStop(1, 'rgba(99, 102, 241, 0)');
+                ctx.fillStyle = grad;
+                ctx.beginPath();
+                ctx.arc(mouse.x, mouse.y, mouse.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update();
                 particles[i].draw();
 
-                // Mouse to Particle connection
+                // Mouse to Particle connections
                 if (mouse.x !== null) {
                     let dx = mouse.x - particles[i].x;
                     let dy = mouse.y - particles[i].y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
                     if (distance < mouse.radius) {
-                        ctx.strokeStyle = `rgba(15, 23, 42, ${0.2 * (1 - distance / mouse.radius)})`;
-                        ctx.lineWidth = 0.8;
+                        const strength = 1 - distance / mouse.radius;
+                        ctx.strokeStyle = `rgba(15, 23, 42, ${strength * 0.35})`;
+                        ctx.lineWidth = strength * 1.5;
                         ctx.beginPath();
                         ctx.moveTo(mouse.x, mouse.y);
                         ctx.lineTo(particles[i].x, particles[i].y);
@@ -128,15 +154,16 @@
                     }
                 }
 
-                for (let j = i; j < particles.length; j++) {
+                // Particle to Particle connections
+                for (let j = i + 1; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
 
                     if (distance < connectionDistance) {
                         const opacity = 1 - (distance / connectionDistance);
-                        ctx.strokeStyle = `rgba(15, 23, 42, ${opacity * 0.18})`; 
-                        ctx.lineWidth = 0.8;
+                        ctx.strokeStyle = `rgba(15, 23, 42, ${opacity * 0.22})`;
+                        ctx.lineWidth = opacity * 1.2;
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
