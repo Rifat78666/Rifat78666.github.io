@@ -86,7 +86,7 @@ ul { list-style: none; }
     background: var(--bg-card-hover);
     border-color: rgba(124, 106, 255, 0.25);
     transform: translateY(-6px);
-    box-shadow: 0 16px 48px rgba(124, 106, 255, 0.12), 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 16px 48px rgba(124, 106, 255, 0.12);
 }
 
 /* ── Buttons ─────────────────────────────────────────────── */
@@ -566,6 +566,9 @@ ul { list-style: none; }
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #f8fafc;
 }
+.skill-card:hover {
+    background: #1e293b !important;
+}
 
 .skill-icon {
     font-size: 2.6rem;
@@ -624,6 +627,9 @@ ul { list-style: none; }
     background: #0f172a;
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #f8fafc;
+}
+.project-card:hover {
+    background: #1e293b !important;
 }
 
 .project-card::before {
@@ -742,6 +748,9 @@ ul { list-style: none; }
     background: #0f172a;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius);
+}
+.timeline-content:hover {
+    background: #1e293b !important;
 }
 
 .timeline-period {
