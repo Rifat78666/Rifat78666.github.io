@@ -1065,6 +1065,37 @@ ul { list-style: none; }
     gap: 8px;
 }
 
+.pub-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 10px 22px;
+    border-radius: 50px;
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    color: var(--accent-2);
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.pub-link:hover {
+    background: var(--accent-gradient);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 212, 255, 0.25);
+}
+
+.pub-link svg {
+    transition: transform 0.3s ease;
+}
+
+.pub-link:hover svg {
+    transform: translate(2px, -2px);
+}
+
 /* ── Contact Location ────────────────────────────────────── */
 .contact-location {
     display: flex;
