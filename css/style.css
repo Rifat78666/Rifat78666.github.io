@@ -10,28 +10,28 @@
 }
 
 :root {
-    /* Core palette — Premium Dark */
-    --bg-primary:    #020617;
-    --bg-secondary:  #0f172a;
-    --bg-card:       rgba(15, 23, 42, 0.6);
-    --bg-card-hover: rgba(30, 41, 59, 0.8);
+    /* Core palette — Premium Light */
+    --bg-primary:    #f8fafc;
+    --bg-secondary:  #ffffff;
+    --bg-card:       rgba(255, 255, 255, 0.7);
+    --bg-card-hover: rgba(255, 255, 255, 0.95);
 
-    /* Accent — Vibrant for dark mode */
-    --accent-1: #818cf8;
-    --accent-2: #38bdf8;
-    --accent-3: #a78bfa;
+    /* Accent — Adjusted for light mode contrast */
+    --accent-1: #6366f1;
+    --accent-2: #0ea5e9;
+    --accent-3: #8b5cf6;
     --accent-gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
     --accent-gradient-2: linear-gradient(135deg, var(--accent-3), var(--accent-1));
 
     /* Text */
-    --text-primary:   #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted:     #64748b;
+    --text-primary:   #0f172a;
+    --text-secondary: #475569;
+    --text-muted:     #94a3b8;
 
     /* Glass */
-    --glass-bg:     rgba(15, 23, 42, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    --glass-bg:     rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(0, 0, 0, 0.05);
+    --glass-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
 
     /* Misc */
     --radius: 18px;
@@ -142,10 +142,10 @@ ul { list-style: none; }
     top: 0; left: 0; right: 0;
     z-index: 1000;
     padding: 18px 0;
-    background: rgba(2, 6, 23, 0.8);
+    background: rgba(248, 250, 252, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     transition: var(--transition);
 }
 
@@ -185,8 +185,8 @@ ul { list-style: none; }
 .nav-link {
     padding: 9px 20px;
     font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-secondary);
+    font-weight: 600;
+    color: var(--text-primary);
     border-radius: 8px;
     transition: var(--transition);
     position: relative;
@@ -528,6 +528,8 @@ ul { list-style: none; }
 .stat-card {
     padding: 26px;
     text-align: center;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .stat-number,
 .stat-icon {
@@ -560,6 +562,9 @@ ul { list-style: none; }
     padding: 30px;
     text-align: center;
     animation-delay: var(--delay);
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
 }
 
 .skill-icon {
@@ -574,6 +579,7 @@ ul { list-style: none; }
     font-weight: 600;
     margin-bottom: 18px;
     letter-spacing: 0.3px;
+    color: #f8fafc;
 }
 
 .skill-bar {
@@ -615,6 +621,9 @@ ul { list-style: none; }
     animation-delay: var(--delay);
     position: relative;
     overflow: hidden;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
 }
 
 .project-card::before {
@@ -661,11 +670,12 @@ ul { list-style: none; }
     font-weight: 700;
     margin-bottom: 14px;
     transition: var(--transition);
+    color: #f8fafc;
 }
 .project-card:hover .project-title { color: var(--accent-2); }
 
 .project-description {
-    color: var(--text-secondary);
+    color: #94a3b8;
     font-size: 0.93rem;
     line-height: 1.75;
     flex-grow: 1;
@@ -727,7 +737,12 @@ ul { list-style: none; }
     box-shadow: 0 0 16px rgba(124, 106, 255, 0.5), 0 0 4px rgba(124, 106, 255, 0.8);
 }
 
-.timeline-content { padding: 30px; }
+.timeline-content { 
+    padding: 30px;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+}
 
 .timeline-period {
     font-family: var(--font-mono);
@@ -745,6 +760,7 @@ ul { list-style: none; }
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 6px;
+    color: #f8fafc;
 }
 
 .timeline-company {
@@ -757,7 +773,7 @@ ul { list-style: none; }
 .timeline-highlights li {
     position: relative;
     padding-left: 22px;
-    color: var(--text-secondary);
+    color: #94a3b8;
     font-size: 0.92rem;
     margin-bottom: 10px;
     line-height: 1.65;
