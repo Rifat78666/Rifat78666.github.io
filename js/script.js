@@ -88,7 +88,7 @@
             }
 
             draw() {
-                ctx.fillStyle = 'rgba(99, 102, 241, 0.4)'; // Subtle indigo
+                ctx.fillStyle = 'rgba(15, 23, 42, 0.25)'; // Dark slate nodes
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
@@ -117,7 +117,7 @@
 
                     if (distance < connectionDistance) {
                         const opacity = 1 - (distance / connectionDistance);
-                        ctx.strokeStyle = `rgba(99, 102, 241, ${opacity * 0.15})`;
+                        ctx.strokeStyle = `rgba(15, 23, 42, ${opacity * 0.1})`; // Dark slate connections
                         ctx.lineWidth = 1;
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
