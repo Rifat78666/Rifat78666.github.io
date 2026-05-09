@@ -15,6 +15,9 @@
     --bg-secondary:  #ffffff;
     --bg-card:       rgba(255, 255, 255, 0.7);
     --bg-card-hover: rgba(255, 255, 255, 0.95);
+    --nav-bg:        rgba(248, 250, 252, 0.85);
+    --nav-scrolled:  rgba(255, 255, 255, 0.8);
+    --nav-border:    rgba(0, 0, 0, 0.04);
 
     /* Accent — Adjusted for light mode contrast */
     --accent-1: #6366f1;
@@ -46,6 +49,9 @@
     --bg-secondary:  #111827;
     --bg-card:       rgba(15, 23, 42, 0.7);
     --bg-card-hover: rgba(15, 23, 42, 0.95);
+    --nav-bg:        rgba(10, 15, 28, 0.85);
+    --nav-scrolled:  rgba(17, 24, 39, 0.95);
+    --nav-border:    rgba(255, 255, 255, 0.05);
 
     --text-primary:   #f8fafc;
     --text-secondary: #cbd5e1;
@@ -157,15 +163,15 @@ ul { list-style: none; }
     top: 0; left: 0; right: 0;
     z-index: 1000;
     padding: 18px 0;
-    background: rgba(248, 250, 252, 0.85);
+    background: var(--nav-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    border-bottom: 1px solid var(--nav-border);
     transition: var(--transition);
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--nav-scrolled);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border-bottom: 1px solid var(--glass-border);
