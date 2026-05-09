@@ -342,4 +342,34 @@
         el.classList.add('visible');
     });
 
+    // ── Theme Toggle ───────────────────────────────────────
+    const themeToggle = document.getElementById('themeToggle');
+    const moonIcon = document.querySelector('.moon-icon');
+    const sunIcon = document.querySelector('.sun-icon');
+    
+    // Check local storage
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if(moonIcon) moonIcon.style.display = 'none';
+        if(sunIcon) sunIcon.style.display = 'block';
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                if(moonIcon) moonIcon.style.display = 'block';
+                if(sunIcon) sunIcon.style.display = 'none';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                if(moonIcon) moonIcon.style.display = 'none';
+                if(sunIcon) sunIcon.style.display = 'block';
+            }
+        });
+    }
+
 })();
