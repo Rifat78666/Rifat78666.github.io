@@ -252,16 +252,19 @@ ul { list-style: none; }
 .btn-talk {
     padding: 8px 24px;
     border-radius: 9999px;
-    border: 1px solid #d97743;
+    border: 1px solid var(--glass-border);
     background: transparent;
-    color: #d97743;
+    color: var(--text-primary);
     font-weight: 600;
     font-size: 0.95rem;
     transition: var(--transition);
     cursor: pointer;
+    white-space: nowrap;
 }
 .btn-talk:hover {
-    background: rgba(217, 119, 67, 0.1);
+    color: var(--accent-2);
+    border-color: rgba(0, 212, 255, 0.4);
+    background: rgba(0, 212, 255, 0.08);
 }
 
 /* Hamburger */
