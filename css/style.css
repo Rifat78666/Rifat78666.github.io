@@ -18,6 +18,7 @@
     --nav-bg:        rgba(248, 250, 252, 0.85);
     --nav-scrolled:  rgba(255, 255, 255, 0.8);
     --nav-border:    rgba(0, 0, 0, 0.04);
+    --grid-line:     rgba(15, 23, 42, 0.04);
 
     /* Accent — Adjusted for light mode contrast */
     --accent-1: #6366f1;
@@ -52,6 +53,7 @@
     --nav-bg:        rgba(10, 15, 28, 0.85);
     --nav-scrolled:  rgba(17, 24, 39, 0.95);
     --nav-border:    rgba(255, 255, 255, 0.05);
+    --grid-line:     rgba(255, 255, 255, 0.05);
 
     --text-primary:   #f8fafc;
     --text-secondary: #cbd5e1;
@@ -341,8 +343,8 @@ ul { list-style: none; }
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
     background-size: 70px 70px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
     -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
