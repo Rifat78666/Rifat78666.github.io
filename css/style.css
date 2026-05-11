@@ -197,6 +197,7 @@ ul { list-style: none; }
     font-weight: 700;
     color: var(--text-primary);
     transition: var(--transition);
+    white-space: nowrap;
 }
 .logo-bracket {
     color: var(--accent-1);
