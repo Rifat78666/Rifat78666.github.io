@@ -5,7 +5,7 @@ Welcome to the repository of my personal portfolio website! This project serves 
 ![Portfolio Preview](images/profile.png)
 
 ## 🌐 Live Site
-You can visit the live version of this portfolio at: **[Insert Live URL Here if available]**
+You can visit the live version of this portfolio at: **[https://rifat78666.github.io/]**
 
 ## 👨‍💻 About Me
 I am an **MSc Artificial Intelligence student** at the University of Milano-Bicocca with hands-on experience in machine learning, deep learning, and data-driven applications. I previously worked as a Software QA Engineer, bringing strong analytical and problem-solving skills to the table. I'm deeply interested in applying AI to real-world systems, combining quality-driven thinking with cutting-edge AI skills.
